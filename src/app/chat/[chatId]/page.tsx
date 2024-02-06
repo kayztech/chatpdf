@@ -3,12 +3,11 @@ import ChatSideBar from "@/components/ChatSideBar";
 import PDFViewer from "@/components/PDFViewer";
 import { db } from "@/lib/db";
 import { chats } from "@/lib/db/schema";
-//import { checkSubscription } from "@/lib/subscription";
+import { checkSubscription } from "@/lib/subscription";
 import { auth } from "@clerk/nextjs";
 import { eq } from "drizzle-orm";
 import { redirect } from "next/navigation";
 import React from "react";
-import { checkSubscription } from "@/lib/subscription";
 
 type Props = {
   params: {

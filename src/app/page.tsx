@@ -10,6 +10,7 @@ import { chats } from "@/lib/db/schema";
 import { eq } from "drizzle-orm";
 
 
+
 export default async function Home() {
 
   const {userId} = await auth();
@@ -27,11 +28,12 @@ export default async function Home() {
   return (
     <div className ="p-10 w-screen min-h-screen  bg-gradient-to-r from-rose-100 to-teal-100">
       <div className = "absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
+        
         <h1 className = "text-blue-800">Hello World</h1>
         <div className="flex flex-col items-center text-center">
           <div className = "flex items-center">
             <h1 className = "mr-3 text-5xl font-semibold"> Chat with any PDF </h1>
-              <Button> Click Me</Button>
+              
               <UserButton afterSignOutUrl="/"/>
           </div>
 
@@ -39,7 +41,7 @@ export default async function Home() {
             {isAuth && firstChat && (
               <>
                 <Link href={`/chat/${firstChat.id}`}>
-                  <Button>
+                  <Button className="shadow-cyan-500/50">
                     Go to Chats <ArrowRight className="ml-2" />
                   </Button>
                 </Link>
@@ -56,10 +58,7 @@ export default async function Home() {
           <div className="w-full mt-4">
             {isAuth ? (
               <div>
-                 <h1>fileupload area</h1>
-                <Button>Hello
-                  <ArrowRight className="w-4 h-4 ml-2" />
-                </Button>
+                 
                 <FileUpload />
               </div>
               //<FileUpload />
